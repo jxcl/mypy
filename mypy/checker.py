@@ -1935,10 +1935,6 @@ class TypeChecker(NodeVisitor[None], CheckerPluginInterface):
                         return
 
                     if self.iterable_has_object_type(rvalue.items):
-                        # A list that contains an an instance must
-                        # necessarily be of type List[object], since
-                        # there is no more specific type that can be
-                        # assigned.
                         return
 
                     self.msg.need_annotation_for_var(var, rvalue)
